@@ -1,0 +1,64 @@
+h1,h2,h3,h4 {
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  color: #DD334C;
+  font-size: 3em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+p {
+  font-size: 1.5em;
+}
+
+img {
+  height: 6em;
+}
+
+#playerButton {
+  height: 1.75em;
+  width: 340px;
+  color: white;
+  border-color: #DD334C;
+  border-style: outset;
+  border-radius: .3em;
+  border-width: medium;
+  font-size: 1.5em;
+  background-color: inherit;
+}
+
+.footer {
+  padding-top: 0.1em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #DD334C;
+  color: #CA94F2;
+  font-size: 1em;
+  text-align: center;
+}
+
+#sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 350px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  left: 0;
+  background-color: #2A6AB3; /* Black */
+  color: white;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+#main {
+  margin-left: 350px; /* Same as the width of the sidebar */
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}

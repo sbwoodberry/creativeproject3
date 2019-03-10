@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>NBA Players</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="sidebar">
+        <h2>Search for NBA players by name</h2>
+        <p><i>(e.g. lebron or james)</i></p>
+        <form v-on:submit.prevent="searchPlayer">
+          <input v-model="searchName" placeholder="First or Last Name"></input>
+          <br/>
+          <button type="submit">Submit</button>
+        </form>
+        <hr>
+        <div v-if="loading">
+          <p>Loading...</p>
+        </div>
+        <div v-else v-for="player in players.data">
+          <br>
+          <button v-on:click="playerSelected(player)" id="playerButton">{{player.first_name}} {{player.last_name}}</button>
+        </div>
+        <br><br><br>
+      </div>
+
+      <div id="main">
+        <h1>NBA Players</h1>
+        <hr>
+        <div v-if="hasSelected">
+          <img v-bind:src="teamImage" alt="Team Logo">
+          <p><b>Name:</b> {{selectedPlayer.first_name}} {{selectedPlayer.last_name}} <br><br>
+            <b>Postition:</b> {{selectedPlayer.position}} <br><br>
+            <b>Height:</b> {{selectedPlayer.height_feet}} - {{selectedPlayer.height_inches}} <br><br>
+            <b>Weight:</b> {{selectedPlayer.weight_pounds}} <br><br>
+            <b>Team:</b> {{selectedPlayer.team.full_name}} <br><br>
+            {{selectedPlayer.team.conference}} Conference, {{selectedPlayer.team.division}} Division <br>
+          </p>
+        </div>
+        <div v-else>
+          <h2>Search for an NBA player and then click on a name to see more details here...</h2>
+          <img v-bind:src="teamImage" alt="NBA Logo">
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="https://github.com/sbwoodberry/creativeproject3">Github Code</a></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script text="type/javascript" src="/script.js"></script>
+  </body>
+</html>
